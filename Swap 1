@@ -1,0 +1,20 @@
+//Write a Java program to swap two variables. 
+
+import java.util.Scanner;
+class Asg
+{
+	public static void main(String args[])
+	{
+		Scanner sc=new Scanner(System.in);
+		System.out.print("Enter content of variable 'a': ");
+		String a=sc.next();
+		System.out.print("Enter content of variable 'b': ");
+		String b=sc.next();
+		String temp;
+		temp=a;
+		a=b;
+		b=temp;
+		System.out.println("AFTER SWAPPING\nContent in 'a' = "+a);
+		System.out.println("Content in 'b' = "+b);
+	}
+}
