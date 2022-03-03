@@ -1,0 +1,9 @@
+//Write a Java program to divide two numbers and print on the screen. 
+class Asg
+{
+	public static void main(String args[])
+	{
+		int a=50, b=3;
+		System.out.print(a+"/"+b+" = "+(a/b));
+	}
+}
