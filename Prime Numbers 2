@@ -1,0 +1,33 @@
+//Write a Java program to check if the number provided by the user is prime or not.
+
+import java.util.Scanner;
+class Asg
+{
+	public static void main(String args[])
+	{
+		Scanner sc=new Scanner(System.in);
+		char c;
+		
+		do
+		{
+		int x=0;
+		System.out.print("Enter any number: ");
+		int n=sc.nextInt();
+		for(int i =2; i<n; i++)
+		{
+			if(n%i==0)
+			{
+				x++;
+				break;
+			}
+		}
+		if(x==0)
+			System.out.println("The number is prime");
+		else
+			System.out.println("The number is not prime");
+
+		System.out.println("Do you want to continue (Y/N): ");
+		c=sc.next().charAt(0);
+		}while (c=='y' || c=='Y');
+	}
+}
