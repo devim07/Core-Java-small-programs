@@ -1,0 +1,26 @@
+/*
+     E
+    D E
+   C D E
+  B C D E
+ A B C D E
+ */
+ 
+ 
+class Asg
+{
+	public static void main(String args[])
+	{
+		for(int i=1; i<=5; i++)
+		{
+			char c=65;
+			for(int k=5; k>=i; k--)
+				System.out.print(" ");
+			for(int j=5-i; j<5; j++)
+			{
+				System.out.print((char)(c+j)+" ");
+			}
+			System.out.println();
+		}
+	}
+}
