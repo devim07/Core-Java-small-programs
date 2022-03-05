@@ -1,0 +1,35 @@
+//Write a Java program to print an American flag on the screen. 
+
+class Asg
+{
+	public static void main(String args[])
+	{
+		int j;
+		for(int i=1;i<=15;i++)
+		{
+			if(i<=9)
+			{
+				if(i%2==0)
+				{
+					System.out.print("* * * * * *");
+					for(j=0; j<45; j++)
+						System.out.print("=");
+					System.out.print("\n");
+				}
+				else
+				{
+					System.out.print(" * * * * * ");
+					for(j=0; j<45; j++)
+						System.out.print("=");
+					System.out.print("\n");
+				}
+			}
+			else
+			{
+				for(j=0; j<56; j++)
+						System.out.print("=");
+					System.out.print("\n");
+			}	
+		}
+	}
+}
