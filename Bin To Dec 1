@@ -1,0 +1,26 @@
+/*Write a Java program to convert a binary number to decimal number. 
+Input Data: 
+Input a binary number: 100 
+Expected Output 
+Decimal Number: 4 
+*/
+
+import java.util.Scanner;
+class Asg
+{
+	public static void main(String args[])
+	{
+		Scanner sc=new Scanner(System.in);
+		System.out.print("Enter a binary number: ");
+		int b=sc.nextInt();
+		int n=0,m=b,i=0;
+		while(b>0)
+		{
+			n=(int)(n+((b%10)*(Math.pow(2,i))));
+			i++;
+			b/=10;11
+		}
+		System.out.print("("+m+")2 = ("+n+")10");
+	}
+}
+
