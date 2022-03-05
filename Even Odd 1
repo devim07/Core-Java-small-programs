@@ -1,0 +1,14 @@
+//WAP using condition operator to check if the number is even or odd.
+
+import java.util.Scanner;
+class Hw
+{
+	public static void main(String args[])
+	{
+		Scanner sc=new Scanner(System.in);
+		System.out.print("Enter any number: ");
+		int n=sc.nextInt();
+		String s=(n%2==0)?"Even":"Odd";
+		System.out.println("The number is "+s);
+	}
+}
