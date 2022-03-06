@@ -1,0 +1,44 @@
+/*23. Write a Java program to convert a binary number to hexadecimal number. 
+Input Data: 
+Input a Binary Number: 11111101 
+Expected Output 
+HexaDecimal value: FD 
+*/
+
+import java.util.Scanner;
+class Asg
+{
+	public static void main(String args[])
+	{
+		Scanner sc=new Scanner(System.in);
+		System.out.print("Enter a Binary number: ");
+		int b=sc.nextInt();
+		int a[];
+		a=new int[5];
+		int n=0, t, t1=b, c,i=0,j=0;
+		while(t1>0)
+		{
+			t=t1%10000;
+			i=0;
+			n=0;
+			while(t>0)
+			{
+				n=(int)(n+((t%10)*Math.pow(2,i)));
+				t/=10;
+				i++;
+			}
+			t1/=10000;
+			a[j]=n;
+			j++;
+		}
+		System.out.print("("+b+")2 = (");
+		for(i=j-1;i>=0;i--)
+		{
+			if(a[i]<=9)
+				System.out.print(a[i]);
+			else
+				System.out.print((char)(a[i]+65-10));
+		}
+		System.out.print(")16");
+	}
+}
