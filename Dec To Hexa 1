@@ -1,0 +1,35 @@
+/*Write a Java program to convert a decimal number to hexadecimal number. 
+Input Data: 
+Input a decimal number: 15 
+Expected Output 
+Hexadecimal number is : F 
+*/
+
+import java.util.Scanner;
+class Asg
+{
+	public static void main(String args[])
+	{
+		Scanner sc=new Scanner(System.in);
+		System.out.print("Enter a Decimal number: ");
+		int d=sc.nextInt();
+		int a[];
+		a=new int[5];
+		int t1=d, i=0,j=0;
+		while(t1>0)
+		{
+			a[j]=t1%16;
+			t1/=16;
+			j++;
+		}
+		System.out.print("("+d+")10 = (");
+		for(i=j-1;i>=0;i--)
+		{
+			if(a[i]<=9)
+				System.out.print(a[i]);
+			else
+				System.out.print((char)(a[i]+65-10));
+		}
+		System.out.print(")16");
+	}
+}
