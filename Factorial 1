@@ -1,0 +1,21 @@
+//WAP to find the factorial of any given number
+
+import java.util.Scanner;
+class Test
+{
+	public static void main(String args[])
+	{
+		System.out.print("Enter any number: ");
+		Scanner sc=new Scanner(System.in);
+		int n=sc.nextInt();
+		long x=1;
+		if(n==0 ||n==1)
+			System.out.print(n+"!= 1");
+		else
+		{
+			for(int i=n; i>=2; i--)
+				x*=i;
+			System.out.print(n+"!= "+x);
+		}
+	}
+}
