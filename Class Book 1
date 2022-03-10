@@ -10,15 +10,25 @@ class Book
 	String publi;
 	int year;
 	void disTitle(String T)
+	{
 		System.out.println("The title of the book is "+T);
+	}
 	void disAuthor(String A)
+	{
 		System.out.println("The author of the book is "+A);
+	}
 	void disNoPage(int n)
+	{
 		System.out.println("The book has "+n+" pages");
+	}
 	void disPubli(String P)
+	{
 		System.out.println("The book is published by "+P);
+	}
 	void disYear(int y)
+	{
 		System.out.println("The book was published in the year "+y);
+	}
 	
 	public static void main(String args[])
 	{
