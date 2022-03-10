@@ -1,0 +1,39 @@
+//1.	WAP to create a Book class. Add proper members and functionalities to print the title author, no of pages, publication and year. 
+
+import java.util.Scanner;
+class Book
+{
+	String title;
+	String author;
+	int noPage;
+	String publi;
+	int year;
+	Scanner sc=new Scanner(System.in);
+			
+	void display()
+	{
+		System.out.println("The title of the book is "+title);
+		System.out.println("The author of the book is "+author);
+		System.out.println("The book has "+noPage+" pages");
+		System.out.println("The book is published by "+publi);
+		System.out.println("The book was published in the year "+year);
+	}
+	void details()
+	{
+		System.out.println("Enter the title, author, no. of pages, publication and year of publishing");
+		title=sc.nextLine();
+		author=sc.nextLine();
+		noPage=sc.nextInt();
+		sc.nextLine();
+		publi=sc.nextLine();
+		year=sc.nextInt();
+	}
+	
+	public static void main(String args[])
+	{
+		Book b1=new Book();
+		
+		b1.details();
+		b1.display();
+	}
+}
