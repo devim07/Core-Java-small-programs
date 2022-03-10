@@ -1,0 +1,21 @@
+//Check whether the Given Number is a Palindrome or NOT.
+
+import java.util.Scanner;
+class Test
+{
+	public static void main(String args[])
+	{
+		Scanner sc=new Scanner(System.in);
+		System.out.print("Enter any number:");
+		int n=sc.nextInt(), sum=0, m=n;
+		while(n>0)
+		{
+			sum=(sum*10)+(n%10);
+			n/=10;
+		}
+		if(sum==m)
+			System.out.print("The given number is a Palindrome");
+		else
+			System.out.print("The given number is NOT a Palindrome");
+	}
+}
