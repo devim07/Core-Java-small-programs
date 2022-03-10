@@ -1,0 +1,15 @@
+//How to add two numbers without using the arithmetic operators in Java
+
+import java.util.Scanner;
+class Test
+{
+	public static void main(String args[])
+	{
+		Scanner sc=new Scanner(System.in);
+		System.out.print("Enter any 2 numbers:");
+		int a=sc.nextInt(), b=sc.nextInt();
+		for(a=a;a>0; a--)
+			b++;
+		System.out.print("Sum = "+b);
+	}
+}
