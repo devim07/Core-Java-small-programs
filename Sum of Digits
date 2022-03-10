@@ -1,0 +1,18 @@
+//Write a Java Program to find sum of the digits of a given number.
+
+import java.util.Scanner;
+class Test
+{
+	public static void main(String args[])
+	{
+		Scanner sc=new Scanner(System.in);
+		System.out.print("Enter any number:");
+		int n=sc.nextInt(), sum=0, m=n;
+		while(n>0)
+		{
+			sum+=(n%10);
+			n/=10;
+		}
+		System.out.print("The sum of digits of "+m+" = "+sum);
+	}
+}
