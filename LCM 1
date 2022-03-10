@@ -1,0 +1,20 @@
+//Write a java program to LCM of TWO given number.
+
+import java.util.Scanner;
+class Test
+{
+	public static void main(String args[])
+	{
+		Scanner sc=new Scanner(System.in);
+		System.out.print("Enter any two number:");
+		int a=sc.nextInt(),b=sc.nextInt(),i;
+		if(b<a)
+		{
+			int temp=a;
+			a=b;
+			b=temp;
+		}
+		for(i=1; (i*a)%b!=0; i++);
+		System.out.print("The LCM is "+(i*a));
+	}
+}
