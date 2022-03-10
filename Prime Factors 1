@@ -1,0 +1,22 @@
+//Write a Java Program to print all the Prime Factors of the Given Number.
+
+import java.util.Scanner;
+class Test
+{
+	public static void main(String args[])
+	{
+		Scanner sc=new Scanner(System.in);
+		System.out.print("Enter any number:");
+		int n=sc.nextInt(), c=2, m=n;
+		System.out.print("The prime factors of " +n+" are ");
+		while(n>1)
+		{
+			if(n%c==0)
+			{
+				System.out.print((c)+" ");
+				n/=c;
+			}
+			c+=1;
+		}
+	}
+}
