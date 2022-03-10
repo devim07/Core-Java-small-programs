@@ -1,0 +1,16 @@
+//WAP to check the given number is Positive or Negative in Java?
+
+import java.util.Scanner;
+class Test
+{
+	public static void main(String args[])
+	{
+		Scanner sc=new Scanner(System.in);
+		System.out.print("Enter any number:");
+		int n=sc.nextInt();
+		if(n<0)
+			System.out.print(n+ " is a negative number");
+		else
+			System.out.print(n+ " is a positive number");
+	}
+}
