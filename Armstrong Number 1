@@ -1,0 +1,27 @@
+//WAP to check if the number given is an Armstrong number.
+
+import java.util.Scanner;
+class Test
+{
+	public static void main(String args[])
+	{
+		Scanner sc=new Scanner(System.in);
+		System.out.print("Enter any 3 digit number:");
+		int n=sc.nextInt();
+		int sum=0, m=n;
+		if(n>=100 && n<=999)
+		{
+			while (n>0)
+			{
+				sum+=(Math.pow(n%10, 3));
+				n/=10;
+			}
+			if (sum==m)
+				System.out.print(m+ " is an Armstrong number.");
+			else
+				System.out.print(m+ " is NOT an Armstrong number.");	
+		}
+		else
+			System.out.print("You did not enter a 3 digit number.");
+	}
+}
