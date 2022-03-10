@@ -1,0 +1,15 @@
+//To print the following series EVEN number Series 2 4 6 8 10 12 14 16 .....
+
+import java.util.Scanner;
+class Test
+{
+	public static void main(String args[])
+	{
+		Scanner sc=new Scanner(System.in);
+		System.out.print("Enter the maximum number:");
+		int n=sc.nextInt(), c=2;
+		System.out.print("The the even numbers are ");
+		for(int i=2; i<=n; i=i+2)
+			System.out.print(i+" ");
+	}
+}
