@@ -1,0 +1,15 @@
+//Write a Java Program to find the smallest of 3 numbers (a,b,c)
+
+import java.util.Scanner;
+class Test
+{
+	public static void main(String args[])
+	{
+		Scanner sc=new Scanner(System.in);
+		System.out.print("Enter any 3 numbers:");
+		int a=sc.nextInt(), b=sc.nextInt(), c=sc.nextInt();
+		int min= Math.min(a,b);
+		min= Math.min(min,c);
+		System.out.print(min+ " is the smallest number");
+	}
+}
