@@ -1,0 +1,29 @@
+//Write a Java Program to find GCD of two given numbers.
+
+import java.util.Scanner;
+class Test
+{
+	public static void main(String args[])
+	{
+		Scanner sc=new Scanner(System.in);
+		System.out.print("Enter any two number:");
+		int a=sc.nextInt(),b=sc.nextInt(),i;
+		if(b<a)
+		{
+			int temp=a;
+			a=b;
+			b=temp;
+		}
+		if(b%a==0)
+			System.out.print("The GCD is "+a);
+		else
+		{
+			for(i=a/2; i>0; i--)
+			{
+				if(a%i==0 && b%i==0)
+					break;
+			}
+			System.out.print("The GCD is "+i);
+		}
+	}
+}
