@@ -1,0 +1,40 @@
+//WAP to take employee id, name, basic salary for workers in ParleG and calculate their gross salary  with 10% DA and 7% incentives.
+
+import java.util.Scanner;
+class ParleG
+{
+	int id;
+	String name;
+	int basicSal;
+	int salary;
+	static String dept="General";
+	
+	void setData(int id, String name, int basicSal)
+	{
+		this.id=id;
+		this.name=name;
+		this.basicSal=basicSal;
+		this.salary=(int) (1.17*basicSal);
+	}
+	
+	void getData()
+	{
+		System.out.printf("ID:%d\t\tName: %-20s Department: %s \t\t", id, name, dept);
+		System.out.printf("Gross Salary= %7d.00\n\n",salary);
+	}
+	
+	public static void main(String args[])
+	{
+		ParleG e1=new ParleG();
+		ParleG e2=new ParleG();
+		ParleG e3=new ParleG();
+		e1.setData(100,"Devi Dinesh",50000);
+		e2.setData(101,"Bhavya Dinesh",60000);
+		e3.setData(200,"P N Dinesh",70000);
+		e1.getData();
+		e2.getData();
+		dept="Account";
+		e3.getData();
+		e1.getData();
+	}
+}
