@@ -1,0 +1,46 @@
+/*WAP to take employee id, name, basic salary for workers in ParleG
+and calculate their gross salary  with 10% DA and 7% incentives. 
+If the employee works for less than 8 hours on a day, the Rs. 100 is cut from his salary. 
+Calculate the final salary to be given after pay cut. */
+
+import java.util.Scanner;
+class ParleG
+{
+	int id;
+	String name;
+	int basicSal;
+	int salary;
+	static String dept="General";
+	int days;
+	int finalSal;
+	
+	ParleG()
+	{
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter employee id, name, bascic salary and no. of days eligible for pay cut");
+		id=sc.nextInt();
+		sc.nextLine();
+		name=sc.nextLine();
+		basicSal=sc.nextInt();
+		salary=(int) (1.17*basicSal);
+		days=sc.nextInt();;
+		finalSal=salary-(days*100);
+	}
+	
+	void getData()
+	{
+		System.out.printf("ID:%d\t\tName: %-20s Department: %s \t\t", id, name, dept);
+		System.out.printf("Gross Salary= %7d.00\n",salary);
+		System.out.printf("Salary after pay cut for %d days= %7d.00\n\n",days, finalSal);
+	}
+	
+	public static void main(String args[])
+	{
+		ParleG e1=new ParleG();
+		ParleG e2=new ParleG();
+		ParleG e3=new ParleG();
+		e1.getData();
+		e2.getData();
+		e3.getData();
+	}
+}
