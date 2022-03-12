@@ -1,0 +1,52 @@
+/*Write a class named DItePlan which contains member variables like 
+age, gender, nutrients, weight and height. 
+Calculate BMI and display it. Use chaining constructors concepts.*/
+
+
+import java.util.Scanner;
+class DitePlan
+{
+	char gen;
+	String nutri;
+	int age;
+	float weight;
+	int height;
+	float bmi;
+		
+	DitePlan()
+	{
+		this("All nutrients", 'F');
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Welcome to your Dite Plan!");
+		System.out.println("Enter your age, weight and height(cm)");
+		age=sc.nextInt();
+		weight=sc.nextFloat();
+		height= sc.nextInt();
+		bmi=weight*10000/(height*height);
+	}
+	
+	DitePlan(String nutri, char gen)
+	{
+		this.nutri=nutri;
+		this.gen=gen;
+	}	
+	
+	void getData()
+	{
+		System.out.println("Your plan is for "+nutri);
+		System.out.println("Your BMI is  "+bmi);
+	}
+}
+
+class Members
+{	
+	public static void main(String args[])
+	{
+		DitePlan e1=new DitePlan();
+		e1.getData();
+		DitePlan e2=new DitePlan();
+		e2.getData();
+		DitePlan e3=new DitePlan();
+		e3.getData();
+	}
+}
