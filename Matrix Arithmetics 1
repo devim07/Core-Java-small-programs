@@ -1,0 +1,98 @@
+//WAP to calculate the sum, difference and product of all the matrix elements according to the choice of the user.
+
+import java.util.Scanner;
+class Mtrx
+{
+	int m[][]=new int[3][3];
+	Mtrx()
+	{
+		for(int i=0; i<=2; i++)
+		{
+			for(int j=0; j<=2; j++)
+				m[i][j]=0;
+		}
+	}
+	void elements()
+	{
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter the 9 matrix elements");
+		for(int i=0; i<=2; i++)
+		{
+			for(int j=0; j<=2; j++)
+				m[i][j]=sc.nextInt();
+		}
+	}
+	void sum(Mtrx a, Mtrx b)
+	{
+		for(int i=0; i<=2; i++)
+		{
+			for(int j=0; j<=2; j++)
+				m[i][j]=a.m[i][j]+b.m[i][j];
+		}	
+	}
+	void diff(Mtrx a, Mtrx b)
+	{
+		for(int i=0; i<=2; i++)
+		{
+			for(int j=0; j<=2; j++)
+				m[i][j]=a.m[i][j]-b.m[i][j];
+		}	
+	}
+	void product(Mtrx a, Mtrx b)
+	{
+		for(int i=0; i<=2; i++)
+		{
+			for(int j=0; j<=2; j++)
+			{
+				for(int k=0; k<=2; k++)
+					m[i][j]+=a.m[i][k]+b.m[k][j];
+			}
+		}	
+	}
+	
+	void display()
+	{
+		for(int i=0; i<=2; i++)
+		{
+			for(int j=0; j<=2; j++)
+				System.out.printf("%4d",m[i][j]);
+			System.out.println();
+		}
+	}
+}
+class MtrxArthi
+{
+	public static void main(String args[])
+	{
+		char ch='y';
+		while(ch=='y' ||ch=='Y')
+		{
+			Scanner sc=new Scanner(System.in);
+			Mtrx a=new Mtrx();
+			a.elements();
+			Mtrx b=new Mtrx();
+			b.elements();
+			Mtrx c=new Mtrx();
+			System.out.println("Enter your choice \n1. Sum \n2. Difference\n3. Product\n any other key to quit");
+			int x=sc.nextInt();
+			switch(x)
+			{
+				case 1: c.sum(a,b);
+					System.out.println("The sum of the two matrix is ");
+					c.display();
+					break;
+				case 2: c.diff(a,b);
+					System.out.println("The difference of the two matrix is ");
+					c.display();
+					break;
+				case 3: c.product(a,b);
+					System.out.println("The product of the two matrix is ");
+					c.display();
+					break;
+				default:
+			}
+			System.out.print("Do yo wish to continue: ");
+			ch=sc.next().charAt(0);
+		}
+	}
+}
