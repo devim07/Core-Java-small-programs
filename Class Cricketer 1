@@ -1,0 +1,36 @@
+import java.util.Scanner;
+class Cricket
+{
+	static String teamName="Mumbai Indians";
+	String name;
+	String role;
+	int age;
+	
+	Cricket()
+	{
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter the name, role and age of the cricketer.\n\n");
+		name=sc.nextLine();
+		role=sc.nextLine();
+		age=sc.nextInt();
+	}
+	
+	void display()
+	{
+		System.out.printf("Name:%-20s Age:%-5d \n Good At: %s from team \"%s\"", name, age, role, teamName);
+	}
+	
+	public static void main(String args[])
+	{
+		Cricket c1=new Cricket();
+		Cricket c2=new Cricket();
+		Cricket c3=new Cricket();
+		Cricket c4=new Cricket();
+		Cricket c5=new Cricket();
+		c1.display();
+		c2.display();
+		c3.display();
+		c4.display();
+		c5.display();
+	}
+}
