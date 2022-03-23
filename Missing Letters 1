@@ -1,0 +1,34 @@
+//WAP to display all the missing characters from a given string. 
+
+import java.util.*;
+class Alpha
+{
+	public static void main(String[] arg)
+	{
+		Scanner sc= new Scanner(System.in);
+		String c=sc.nextLine();
+		String s,S;
+		char A=65, a=97;
+		int i=1, j=0;
+		while (i<=26)
+		{
+			S=""+A;
+			s=""+a;
+			if (c.contains(s) || c.contains(S))
+			{
+				a++;
+				A++;
+			}
+			else
+			{
+				j++;
+				System.out.print(A+" ");
+				a++;
+				A++;
+			}
+			i++;
+		}
+		if (j==0)
+			System.out.print("No alphabet is missing.");
+	}
+}
