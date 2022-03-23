@@ -1,0 +1,44 @@
+//WAP to take 3 sides for a tringle and display its type (invalid, equilateral, right-angles, isoceles, not special)
+
+import java.util.*;
+class Tri
+{
+	public static void main(String[] arg)
+	{
+		Scanner sc= new Scanner(System.in);
+		System.out.println("Enter the value of 3 sides ");
+		double a=sc.nextDouble();
+		double b=sc.nextDouble();
+		double c=sc.nextDouble();
+		double m= Math.max(a,b);
+		m=Math.max(m,c);
+		if(m==a)
+		{
+			a=c;
+			c=m;
+		}
+		if (m==b)
+		{
+			b=c;
+			c=m;
+		}
+		if (a+b<=c)
+			System.out.println("invalid");
+		else
+		{
+			if(a==b && b==c)
+				System.out.println("Equilateral");
+			else if(a==b || b==c || c==a)
+			{
+				if(((a*a)+(b*b))==(c*c))
+					System.out.println("right-angled");
+				else
+					System.out.println("isoceles");
+			}
+			else if (((a*a)+(b*b))==(c*c))
+				System.out.println("right-angled");
+			else
+				System.out.println("not special");
+		}
+	}
+}
