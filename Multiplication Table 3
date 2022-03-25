@@ -1,0 +1,18 @@
+//WAP to print the multiplication table till 10 for all numbers from 1 to n (enterd by the user)
+
+import java.util.*;
+class Test
+{
+	public static void main(String args[])
+	{
+		Scanner sc=new Scanner(System.in);
+		System.out.print("Enter any number less than 20: ");
+		int x=sc.nextInt();
+		for(int i=1; i<=10; i++)
+		{
+			for (int j=1;j<=x; j++)
+				System.out.printf("%-2d*%-2d=%-5d", j, i,(i*j));
+			System.out.println();
+		}
+	}
+}
