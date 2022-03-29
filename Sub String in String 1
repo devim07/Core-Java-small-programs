@@ -1,0 +1,17 @@
+// Count how many times the number of 1 is followed by number 0 in the given string.
+// 10101111100010101000000101
+
+class Test 
+{    
+	public static void main(String[] args)
+	{
+		String s="10101111100010101000000101";
+		int j=0;
+		for(int i=0; i<s.length()-1;i++)
+		{
+			if(s.charAt(i)=='1' && s.charAt(i+1)=='0')
+				j++;
+		}
+		System.out.println(j);
+	}
+}
