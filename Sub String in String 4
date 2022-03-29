@@ -1,0 +1,22 @@
+//How many times 101 is repeated in the string. 10101111100010101000000101
+
+class Test 
+{    
+	public static void main(String[] args)
+	{
+		String s="10101111100010101000000101";
+		String ss="101";
+		int j=0, Index=0;
+		while (Index != -1) 
+		{
+			Index = s.indexOf(ss,Index);
+			if( Index != -1)
+			{
+				j++;
+				Index += 2;// could write ss.length() insted of 2
+			}
+		}		
+		System.out.println(j);
+	}
+}
+
