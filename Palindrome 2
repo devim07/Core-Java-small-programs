@@ -1,0 +1,24 @@
+//WAP to find out whether the string is palindrome or not.
+
+
+import java.util.*;
+class Test 
+{    
+	public static void main(String[] args)
+	{
+		Scanner sc=new Scanner(System.in);
+		System.out.print("Enter a string: ");
+		String given=sc.nextLine();
+		String rev="";
+		char arr[]=given.toCharArray();
+		for(int i=arr.length-1; i>=0; i--)
+			rev+=arr[i];
+		
+		System.out.println("reverse: "+rev);
+		if(given.equalsIgnoreCase(rev))
+			System.out.println("Palindrome");
+		else
+			System.out.println("NOT: Palindrome");
+	}
+}
+
