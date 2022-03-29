@@ -1,0 +1,21 @@
+//Count how many times the number of 1 is followed by number 0 in the given string. 10101111100010101000000101  
+
+class Test 
+{    
+	public static void main(String[] args)
+	{
+		String s="10101111100010101000000101";
+		String ss="10";
+		int j=0, Index=0;
+		while (Index != -1) 
+		{
+			Index = s.indexOf(ss,Index);
+			if( Index != -1)
+			{
+				j++;
+				Index += 2;// could write ss.length() insted of 2
+			}
+		}		
+		System.out.println(j);
+	}
+}
