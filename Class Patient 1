@@ -1,0 +1,50 @@
+/*Design a class that can be used by a health care professional to keep track of a patient’s vital statistics. 
+Here’s what the class should do:
+Construct a class called Patient
+Store a String name for the patient
+Store weight and height for patient as doubles
+Construct a new patient using these values
+Write a method called BMI which returns the patient’s BMI as a double. 
+BMI can be calculated as BMI = ( Weight / ( Height in meters x Height in meters ) )
+Next, construct a class called 'Patients' and create a main method. 
+Create a Patient object and assign some height and weight to that object. Display the BMI of that patient.*/
+
+
+import java.util.*;
+class Vital
+{    
+	private String name;
+	private double weight;
+	private double height;
+	
+	Vital(){
+		Scanner sc=new Scanner(System.in);
+		System.out.print("Enter the name of the patient: ");
+		this.setName (sc.nextLine());
+		System.out.print("Enter the weight (in kg) and height (in m): ");
+		this.setWeight (sc.nextDouble());
+		this.setHeight (sc.nextDouble());
+	}
+	void setName(String name){
+		this.name=name;
+	}
+	void setHeight(double height){
+		this.height=height;
+	}
+	void setWeight(double weight){
+		this.weight=weight;
+	}
+	String getName(){
+		return this.name;
+	}
+	double getBmi(){
+		return (this.weight/(this.height*this.height));
+	}
+}
+
+class Patient{
+	public static void main(String[] args)	{
+		Vital p1=new Vital();
+		System.out.print("\nName: "+p1.getName()+"\t BMI = "+p1.getBmi());
+	}
+}
