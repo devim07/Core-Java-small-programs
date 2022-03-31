@@ -1,0 +1,40 @@
+/*Create a class named ‘Animal’ which includes methods like eat() and sleep(). 
+Create a child class of Animal named ‘Bird’ and override the parent class methods. 
+Add a new method named fly(). Create an instance of Animal class and invoke the eat and sleep methods using this object.
+Create an instance of Bird class and invoke the eat, sleep and fly methods using this object.*/
+
+
+import java.util.*;
+class Animal
+{    
+	void eat(){
+		System.out.println("Every animal eats");
+	}
+	void sleep(){
+		System.out.println("Every animal sleeps");
+	}
+}
+
+class Bird extends Animal{
+	void fly(){
+		System.out.println("Every bird can fly");
+	}
+	void eat(){
+		System.out.println("Every bird eats");
+	}
+	void sleep(){
+		System.out.println("Every bird sleeps");
+	}
+}
+
+class Test{
+	public static void main(String args[]){
+		Animal a1=new Animal();
+		a1.eat();
+		a1.sleep();
+		Bird b1=new Bird();
+		b1.eat();
+		b1.sleep();
+		b1.fly();
+	}
+}
