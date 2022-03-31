@@ -1,0 +1,40 @@
+/*Create a class Box that uses a parameterized method to initialize 
+the dimensions of a box. (dimensions are width, height, depth of double type).
+The class should have a method that can return volume. 
+Obtain an object and print the corresponding volume in main() function.*/
+
+
+import java.util.*;
+class Box 
+{    
+	double width;
+	double height;
+	double depth;
+	
+	Box(){
+		Scanner sc=new Scanner(System.in);
+		System.out.print("Enter the width, height and depth of the box: ");
+		this.setWidth(sc.nextDouble());
+		this.setHeight(sc.nextDouble());
+		this.setDepth(sc.nextDouble());
+	}
+	void setWidth(double width){
+		this.width=width;
+	}
+	void setHeight(double height){
+		this.height=height;
+	}
+	void setDepth(double depth){
+		this.depth=depth;
+	}
+	double volume(){
+		return (width*height*depth);
+	}
+}
+
+class Test{
+	public static void main(String[] args)	{
+		Box b=new Box();
+		System.out.print("The volume of the given box = " + b.volume());
+	}
+}
