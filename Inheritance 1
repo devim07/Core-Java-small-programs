@@ -1,0 +1,108 @@
+//WAP to show hybrid inheritance and upcasting such that class A is a parent having 2 children Class B and Class C, and Class B has a child i.e. Class D.
+
+class A{
+	int p=1;
+	int q=2;
+	int r=3;
+	int s=4;
+	{
+		System.out.println("Class A: init block");
+	}
+	A()	{
+		System.out.println("Class A: constructor");
+	}
+	void ma()	{
+		System.out.println("Class A: ma");
+	}
+	void mb()	{
+		System.out.println("Class A: mb");
+	}
+	void mc()	{
+		System.out.println("Class A: mc");
+	}
+	void md()	{
+		System.out.println("Class A: md");
+	}
+}
+class B extends A
+{
+	int p=10;
+	int q=20;
+	int r=30;
+	{
+		System.out.println("Class B: init block");
+	}
+	B()	{
+		System.out.println("Class B: constructor");
+	}
+	void mb()	{
+		System.out.println("Class B: mb");
+	}
+}
+class C extends A
+{
+	int p=40;
+	int q=50;
+	{
+		System.out.println("Class C: init block");
+	}
+	C()
+	{
+		System.out.println("Class C: constructor");
+	}
+	void mc()
+	{
+		System.out.println("Class C: mc");
+	}
+}
+class D extends B
+{
+	int p=100;
+	{
+		System.out.println("Class D: init block");
+	}
+	D()
+	{
+		System.out.println("Class D: constructor");
+	}
+	void md()
+	{
+		System.out.println("Class D: md");
+	}
+}
+
+class inheritance
+{
+	public static void main(String args[])
+	{
+		/*
+		A a1=new B();
+		System.out.println("A a1 b(): "+a1.p);
+		System.out.println("A a1 b(): "+a1.q);
+		System.out.println("A a1 b(): "+a1.r);
+		System.out.println("A a1 b(): "+a1.s);
+		a1.ma();  //class A:ma as mb not present in child
+		a1.mb();  //class B:mb
+		*/
+		
+		/*		
+		A a2=new C();
+		System.out.println("A a2 b(): "+a2.p);
+		System.out.println("A a2 b(): "+a2.q);
+		System.out.println("A a2 b(): "+a2.r);
+		System.out.println("A a2 b(): "+a2.s);
+		a2.ma();
+		a2.mc();
+		*/
+		
+		
+		A a3=new D();
+		System.out.println("A a3 b(): "+a3.p);
+		System.out.println("A a3 b(): "+a3.q);
+		System.out.println("A a3 b(): "+a3.r);
+		System.out.println("A a3 b(): "+a3.s);
+		a3.ma();
+		a3.mc();
+		a3.md();
+	}
+}
