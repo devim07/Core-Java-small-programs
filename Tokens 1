@@ -1,0 +1,27 @@
+//WAP to count tokens (continuous stream of alphabets) in a given string containing @, ?, ',,....
+
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        String s = scan.nextLine();
+        String arr[]=s.split("[^a-zA-Z]");//split when not a-z or A-Z
+        String newarr[]=new String[arr.length];
+        int n=0;
+        for(int i=0; i<arr.length; i++){
+            if(arr[i].length()!=0){
+                newarr[n]=arr[i];
+                n++;
+            }
+                
+        }
+        System.out.println(n);
+        for(int i=0; i<n; i++){
+            System.out.println(newarr[i]);
+        }
+        scan.close();
+    }
+}
