@@ -1,0 +1,70 @@
+//Override the methods toString, equals and hashCode of Object class
+
+
+import java.util.*;
+import java.io.*;
+
+class Person{
+	String name;
+	Integer age;
+	String gen;//gender
+	Integer aadhar;
+	String city;
+	
+	
+	Person(String name,	Integer age,String gen, Integer aadhar,	String city){
+		this.name=name;
+		this.age=age;
+		this.gen=gen;//gender
+		this.aadhar=aadhar;
+		this.city=city;
+	}
+	
+	@Override
+	public String toString(){
+		return (this.name+" "+this.age+" "+this.gen+" "+this.aadhar+" "+this.city);
+	}
+	
+	@Override
+	public boolean equals(Object o){
+		if(o instanceof Person){
+			Person temp=(Person) o;
+			if(this.name.equals(temp.name) && this.age.equals(temp.age) && this.gen.equals(temp.gen) && this.aadhar.equals(temp.aadhar) && this.city.equals(temp.city))
+				return true;
+		}
+		return false;
+		
+	}
+	
+	@Override
+	public int hashCode() {
+		int prime=17;
+		prime+=prime*this.name.hashCode();
+		prime+=prime*this.age.hashCode();
+		prime+=prime*this.gen.hashCode();
+		prime+=prime*this.aadhar.hashCode();
+		prime+=prime*this.city.hashCode();
+		return prime;
+	}
+	
+	public static void main(String args[]){
+		Person p1=new Person("Devi", 30, "Female", 12345678, "Mumbai");
+		Person p2=new Person("Bhavya", 28, "Female", 99945678, "Mumbai");
+		Person p3=new Person("Devi", 30, "Female", 12345678, "Mumbai");
+		
+		System.out.println(p1);
+		System.out.println(p2);
+		System.out.println(p3);
+		
+		System.out.println("\n\np1.equals(p2): "+p1.equals(p2));
+		System.out.println("p1.equals(p3): "+p1.equals(p3));
+		System.out.println("p3.equals(p2): "+p3.equals(p2));
+		
+		System.out.println("\n\np1.hashCode(): "+p1.hashCode());
+		System.out.println("p2.hashCode(): "+p2.hashCode());
+		System.out.println("p3.hashCode(): "+p3.hashCode());
+		
+		
+	}
+}
+	
