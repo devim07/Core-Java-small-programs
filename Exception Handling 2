@@ -1,0 +1,24 @@
+/*Write a class MathOperation which accepts integers from command line. Create an array using these parameters. 
+Loop through the array and obtain the sum and average of all the elements. Display the result. 
+Check for various exceptions that may arise like ArithmeticException, NumberFormatException, and so on. 
+For example: The class would be invoked as follows: C:>java MathOperation 1900, 4560, 0, 32500
+*/
+
+
+import java.util.*;
+class Test{
+	public static void main(String args[]){
+		int n[]=new int[args.length];
+		int sum=0, avg;
+		try{
+			for(int i=0; i<args.length; i++){
+				n[i]=Integer.valueOf(args[i]);
+				sum+=n[i];
+			}
+			avg=sum/args.length;
+			System.out.println("Average = "+avg);
+		}catch(NumberFormatException | ArithmeticException e){
+			System.out.println("Exception arised");
+		}
+	}
+}
