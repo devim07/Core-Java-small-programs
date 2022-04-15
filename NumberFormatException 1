@@ -1,0 +1,17 @@
+//WAP to handle NumberFormatException such that it prints "Not valid format" if exception occurs or returns the square of the number.
+
+
+import java.util.*;
+class Test{
+	public static void main(String args[]){
+		Scanner sc=new Scanner(System.in);
+		System.out.print("Enter any number: ");
+		int n;
+		try{
+			n=Integer.parseInt(sc.next());
+			System.out.println(n*n);
+		}catch(NumberFormatException e){
+			System.out.println("Not valid format");
+		}	
+	}
+}
