@@ -1,0 +1,44 @@
+//Exception handling with user defined messaged and User defined Checked exception
+
+import java.util.*;
+
+class MyException extends Exception{
+	MyException (String message){
+		super(message);
+	}
+}
+
+class Test{
+	static void m1(int a) throws MyException{
+		throw new MyException("MyException["+a+"]");
+	}
+	public static void main(String args[]){
+		Scanner sc=new Scanner(System.in);
+		int x[]=new int[5];
+		
+		try{
+			int y=3/0;
+		}catch(ArithmeticException e){
+			System.out.println("Invalid Division");
+		}
+		try{
+			int z=Integer.parseInt(sc.next());
+		}catch(NumberFormatException e){
+			System.out.println("Format Miss Match");
+		}
+		try{
+			x[10]=20;
+		}catch(IndexOutOfBoundsException e){
+			System.out.println("Index is invalid");
+		}
+		try{
+			int a=5;
+			m1(a);
+		}catch(MyException e){
+			System.out.println(e.getMessage());
+		}
+		finally{
+			System.out.println("Exception Handling Completed");
+		}
+	}
+}
