@@ -1,0 +1,71 @@
+//Vehicle Inheritance, constructor chaining
+
+import java.util.*;
+
+class Vehicle{
+	String brand;
+	String model;
+	Vehicle(String brand, String model){
+		this.brand=brand;
+		this.model=model;
+		System.out.println("The brand of the Vehicle is "+this.brand+"\nThe model of the Vehicle is "+this.model);
+	}
+}
+
+class PoweredVehicle extends Vehicle{
+	String fuelType;
+	PoweredVehicle(String brand, String model, String fuelType){
+		super(brand,model);
+		this.fuelType=fuelType;
+		System.out.println("The fuel type of the powered vehicle is "+this.fuelType);
+	}
+}
+
+class Bicycle extends Vehicle{
+	int gearCount;
+	Bicycle(String brand, String model, int gearCount){
+		super(brand,model);
+		this.gearCount=gearCount;
+		System.out.println("the gear count of the bicycle is "+this.gearCount);
+	}
+}
+
+class SkateBoard extends Vehicle{
+	double boardLength;
+	SkateBoard(String brand, String model, double boardLength){
+		super(brand,model);
+		this.boardLength=boardLength;
+		System.out.println("The board length of the skate board is "+this.boardLength);
+	}
+}
+
+class Car extends PoweredVehicle{
+	double engineSize;
+	Car(String brand, String model, String fuelType, double engineSize){
+		super(brand,model,fuelType);
+		this.engineSize=engineSize;
+		System.out.println("the engine size of the car is "+this.engineSize);
+	}
+}
+
+class Jet extends PoweredVehicle{
+	int engineCount;
+	Jet(String brand, String model, String fuelType, int engineCount){
+		super(brand,model,fuelType);
+		this.engineCount=engineCount;
+		System.out.println("The engine count of the jet is "+this.engineCount);
+	}
+}
+
+class Test{
+	public static void main(String args[]){
+		
+		Jet j1=new Jet("Honda", "SX045", "Jet Fuel", 8);
+		System.out.println();
+		Car c1=new Car("Honda", "C1545", "Petrol", 25.8);
+		System.out.println();
+		Bicycle b1 = new Bicycle("Bajaj","B12", 4);
+		System.out.println();
+		SkateBoard s1= new SkateBoard("Bajaj", "S700", 45.8);
+	}
+}
