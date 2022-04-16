@@ -1,0 +1,25 @@
+//Given a large integer, n, use the Java BigInteger class' isProbablePrime method to determine and print whether it's prime or not prime.
+
+import java.io.*;
+import java.math.*;
+import java.security.*;
+import java.text.*;
+import java.util.*;
+import java.util.concurrent.*;
+import java.util.regex.*;
+
+
+
+public class Solution {
+    public static void main(String[] args) throws IOException {
+        Scanner sc=new Scanner(System.in);
+        
+        String n = sc.nextLine();
+
+        BigInteger b=new BigInteger(n);
+        if(b.isProbablePrime(1))
+            System.out.println("prime");
+        else
+            System.out.println("not prime");
+    }
+}
