@@ -1,0 +1,32 @@
+/*Write a program which takes an array of integers and prints the running average of 3 consecutive integers. 
+In case the array has fewer than 3 integers, there should be no output.
+Input: [5,14,35,89,140]
+Output: [18, 46, 88] 
+(Explanation: 18=(5+14+35/3, 46=(14+35+89)/3, ...)
+*/
+
+import java.util.*;
+class Test{
+	static double average(int... arr){
+		int sum=0;
+		for(int i=0; i<arr.length; i++)
+			sum+=arr[i];
+		return sum/3.0;
+	}
+	
+	public static void main(String args[]){
+		Scanner sc= new Scanner(System.in);
+		System.out.print("Enter the number of elements in the array: ");
+		int n=sc.nextInt(), i,k=0;
+		System.out.print("Enter the elements in the array: ");
+		int a[]=new int [n];
+		for(i=0; i<n; i++)
+			a[i]=sc.nextInt();
+		if(a.length<=3)
+			System.out.print("Array too small");
+		else{
+			for(i=0; i<a.length-2; i++)
+				System.out.print(average(a[i], a[i+1], a[i+2])+"  ");
+		}
+	}
+}
