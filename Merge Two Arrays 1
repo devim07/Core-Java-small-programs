@@ -1,0 +1,44 @@
+/*
+Write a program to merge two arrays of integers by reading one number at a time from each array until 
+one of the array is exhausted, and then concatenating the remaining numbers.
+ Input: [23,60,94,3,102] and [42,16,74]
+ Output: [23,42,60,16,94,74,3,102]
+*/
+ 
+ import java.util.*;
+class Test2{
+	public static void main(String args[]){
+		Scanner sc= new Scanner(System.in);
+		System.out.print("Enter the number of elements in the first array: ");
+		int n=sc.nextInt(),i,j=0;
+		int a1[]=new int[n];
+		System.out.print("Enter the elements in the first array: ");
+		for(i=0; i<n; i++)
+			a1[i]=sc.nextInt();
+		System.out.print("Enter the number of elements in the second array: ");
+		int m=sc.nextInt();
+		int a2[]=new int[n];
+		System.out.print("Enter the elements in the first array: ");
+		for(i=0; i<m; i++)
+			a2[i]=sc.nextInt();
+		int small;
+		if(m>n)
+			small=n;
+		else
+			small=m;
+		int a3[]=new int[n+m];
+		for(i=0; i<small;i++){
+			a3[j++]=a1[i];
+			a3[j++]=a2[i];
+		}
+		if(a1.length==small){
+			for(i=small; i<m;i++)
+				a3[j++]=a2[i];
+		}else{
+			for(i=small; i<n;i++)
+				a3[j++]=a1[i];
+		}
+		for(i=0; i<m+n;i++)
+			System.out.print(a3[i]+" ");
+	}
+}
