@@ -1,0 +1,44 @@
+/*
+Given an array of integers, print whether the numbers are in ascending order or in descending order or 
+in random order without sorting
+Input: [5,14,35,90,139] Output: Ascending 
+Input: [88,67,35,14,-12] Output: Descending
+Input: [65,14,129,34,7] Output: Random 
+*/
+
+import java.util.*;
+class Test{
+	public static void main(String args[]){
+		Scanner sc= new Scanner(System.in);
+		System.out.print("Enter the number of elements in the array: ");
+		int n=sc.nextInt(), i;
+		int a[]=new int[n];
+		boolean ascending=true, descending=true;
+		System.out.print("Enter the elements in the array: ");
+		for(i=0; i<n; i++){
+			a[i]=sc.nextInt();
+		}
+		for(i=0; i<n-1; i++){
+			if (a[i]>a[i+1]){
+				continue;			
+			}else{
+				descending=false;
+				break;
+			}				
+		}
+		for(i=0; i<n-1; i++){
+			if (a[i]<a[i+1]) {
+				continue;
+			}else{
+				ascending=false;
+				break;
+			}
+		}
+		if(ascending == true)
+			System.out.print("Ascending order");
+		else if (descending == true)
+			System.out.print("Descending order");
+		else
+			System.out.print("No order");
+	}
+}
