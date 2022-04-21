@@ -1,0 +1,39 @@
+/*
+Create a linked list to store 3 values
+*/
+
+import java.util.*;
+class LinkedDemo{
+	Node head;
+	
+	static class Node{
+		int data;
+		Node next;
+		
+		Node(int d){
+			data=d;
+			next=null;
+		}
+	}
+		
+	void display(){
+		Node n= this.head;
+		while(n!=null){
+			System.out.print(n.data+" ");
+			n=n.next;
+		}
+	}
+	
+
+	public static void main(String args[]){
+		Scanner sc= new Scanner(System.in);
+		LinkedDemo list=new LinkedDemo();
+		list.head=new Node(10);
+		Node n2=new Node(20);
+		Node n3=new Node(30);
+		list.head.next=n2;
+		n2.next=n3;
+		
+		list.display();
+	}
+}
