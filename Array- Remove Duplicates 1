@@ -1,0 +1,34 @@
+//WAP to find the first duplicate or repeating element in an integer array.
+
+import java.util.*;
+public class Test {
+	static int n=0;
+	static int arr[]=new int[50];
+	
+    static void delete(int x, int arr[]){
+		for(int i=x; i<n-1; i++){
+			//System.out.print(arr[i]+" ");
+			arr[i]=arr[i+1];     
+		}
+		n--;
+    }
+	
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+		System.out.print("Enter the size of the array: ");
+		n=sc.nextInt();
+		System.out.print("Enter the elements of the array: ");
+		for(int i=0; i<n; i++)
+			arr[i]=sc.nextInt();
+		for(int i=0; i<n-1; i++){
+			for(int j=i+1; j<n; j++){
+				if(arr[i]==arr[j])
+					delete(j, arr);
+			}
+		}
+		System.out.println();
+        for(int i=0; i<n; i++)
+			System.out.print(arr[i]+" ");
+		
+    }
+}
