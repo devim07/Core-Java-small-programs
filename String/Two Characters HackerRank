@@ -1,0 +1,87 @@
+import java.util.*;
+import java.io.*;
+
+public class Solution {
+    static int length=0;
+    
+    static void check(String s, char c0, char c1){
+        char x=s.charAt(0),temp;
+        if(x==c1){
+            temp=c0;
+            c0=c1;
+            c1=temp;
+        }
+
+        boolean flag=true;
+        for(int i=0; i<s.length(); i++){
+            if(i%2==0){
+                if(s.charAt(i)!=c0){
+                    flag=false;
+                    break;
+                }
+            }
+            else{
+                if(s.charAt(i)!=c1){
+                    flag=false;
+                    break;
+                }
+            }
+        }
+        
+        if(flag==true){
+            if(length<s.length()){
+                length=s.length();
+            }
+        }
+        
+    }
+    
+    public static void main(String args[]){
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        sc.nextLine();
+        String s=sc.nextLine();
+        char [] a= s.toCharArray();
+        String temp=s, unq="", sn;
+        char u='a';
+        while(temp.length()!=0){
+            u=temp.charAt(0);
+            unq=unq+u;
+            temp=temp.replace(String.valueOf(u),"");
+        }
+        char [] t= unq.toCharArray();
+        temp=s;
+        for(int j=0; j<t.length; j++){
+            for(int i=0; i<s.length()-1; i++){
+                if((t[j]==s.charAt(i)) && (t[j]==s.charAt(i+1)))
+                    temp=temp.replace(String.valueOf(t[j]),"");
+            }
+        }
+        sn=temp;
+        unq="";
+        while(temp.length()!=0){
+            u=temp.charAt(0);
+            unq=unq+u;
+            temp=temp.replace(String.valueOf(u),"");
+        }
+        char [] t1= unq.toCharArray();
+        char ch='a';
+        temp=sn;
+        for(int i=0; i<t1.length-1; i++){
+            for(int k=i+1; k<t1.length; k++){
+                temp=sn;
+                for(int j=0; j<t1.length; j++){
+                    if(j==i || j==k){
+                        
+                        continue;
+                    }
+                    else{
+                        temp=temp.replace(String.valueOf(t1[j]),"");
+                    }
+                }
+                check(temp, t1[i],t1[k]);
+            }
+        }
+        System.out.println(length);
+    }
+}
