@@ -1,0 +1,36 @@
+/*
+3 arrays are provided
+a = [23,4,5,7,10,12,1,9,11,97,32]
+b = [5,7,12,32,23]
+c = [4,7,12,1,9,97]
+check if array a contains all elements of the other 2 array occuring in the same order as in the smaller arrays
+*/
+
+import java.util.*;
+public class coupa{
+	public static void main(String args[]){	
+		int [] a ={23,4,5,7,10,12,1,9,11,97,32};
+		int[] b={5,7,12,32,23};
+		int c[]={4,7,12,1,9,97};
+		System.out.println(check(a, b));
+		System.out.println(check(a, c));
+	}
+	
+	static String check(int [] a, int[] b){
+		int k=0;
+		boolean found=false;
+		for(int i=0; i<b.length; i++){
+			found=false;
+			for(int j=k; j<a.length; j++){
+				if(b[i]==a[j]){
+					k=j;
+					found=true;
+					break;
+				}
+			}
+			if(found==false)
+				return "failed";	
+		}
+		return "success";
+	}
+}
