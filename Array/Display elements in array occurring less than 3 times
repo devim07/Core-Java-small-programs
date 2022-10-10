@@ -1,0 +1,24 @@
+/*arr = [1,2,3,4,5,4,2,1,2,5,6,7,8,6,5,10,12,2,3,2,1,5,15]
+display only those elements in the array that occur less than 3 times
+*/
+
+import java.util.*;
+public class coupa{
+	public static void main(String args[]){	
+		int [] arr = {1,2,3,4,5,4,2,1,2,5,6,7,8,6,5,10,12,2,3,2,1,5,15};
+		TreeMap<Integer, Integer> a=new TreeMap<>();
+		for(int i=0; i<arr.length; i++){
+			if(a.containsKey(arr[i])){
+				int x=a.get(arr[i]);
+				a.replace(arr[i], ++x);
+			}else{
+				a.put(arr[i], 1);
+			}
+		}
+		Set<Integer> keys=a.keySet();
+		keys.forEach(key->{
+			if(a.get(key)<3)
+				System.out.println(key+" ");
+		});
+	}
+}
