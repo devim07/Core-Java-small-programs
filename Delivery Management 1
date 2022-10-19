@@ -1,0 +1,94 @@
+/*
+Problem Statement:
+Imagine that you have been given the task of managing the food delivery network of a restaurant RoofTop
+in New York. You need to help them deliver the orders to their customers by assigning the delivery boys to
+each order.
+Assume that the city consists of N customers who want to order their lunch today from RoofTop. You have
+a total of M drivers and need to cater to the customers ordering food. Each customer has two parameters
+associated with them, O and T, denoting the time at which a customer orders a meal and the travel time
+from RoofTop restaurant to the destination of this particular customer. Each delivery boy can only deliver
+one order at a time and as soon as the delivery boy gets free, he must start delivering other orders.
+The lowest index delivery boy must be allocated first for the delivery, The status of the delivery boy while
+delivering the order should be "Busy". If all the delivery boys are busy at the time of order placement then
+show the message "No Food :-(".
+Annotations:
+N - Number of customer orders (The customers are enumerated from C1, C2 to CN) M - Number of delivery
+boys (The drivers are enumerated from D1, D2 to DM)
+O - Order placement time
+T - Travel time from restaurant to customer
+Input:
+Total number of customer orders (N) - 6 Total number of drivers (M) - 2
+If 1st Customer's order placement time is 1 and it takes 10 minutes to travel from restaurant to customer
+then (O, T) -> (1, 10)
+2nd Customer Order placement time and Travel time (O, T) - 4, 20
+3rd Customer Order placement time and Travel time (O, T) - 15, 5
+4th Customer Order placement time and Travel time (O, T) - 22, 20 5th Customer order placement time and
+Travel time (O, T) - 24, 10 6th Customer order placement time and Travel time (O, T) - 25, 10
+Example Input Line: 6,2 → (N,M)
+1,10
+4,20
+15,5 
+22,20 
+24,10 
+25,10
+
+Output:
+C1 - D1
+C2 - D2
+C3 - D1
+C4 - D1
+C5 - D2
+C6 - No Food :-(
+*/
+
+
+
+import java.util.*;
+public class Delivery{
+	
+	public static void main(String args[]){	
+		Scanner sc=new Scanner(System.in);
+		int n=sc.nextInt();
+		int m=sc.nextInt();
+		int t=0, o=0;
+		List<Customer> orders=new ArrayList<>();
+		for(int i=0; i<n; i++){
+			String s=sc.next();
+			String[] ch=s.split(",");
+			o=Integer.parseInt(ch[0]);
+			t=Integer.parseInt(ch[1]);
+			Customer c=new Customer(o, t);
+			orders.add(c);			
+		}
+		int del[]=new int[m];
+		for(int i=0; i<n; i++){
+			boolean found=false;
+			for(int j=0; j<m; j++){
+				if(del[j]<=orders.get(i).getO()){
+					System.out.println("C"+(i+1)+" - D"+(j+1));
+					del[j]=del[j]+orders.get(i).getT();
+					found=true;
+					break;
+				}
+			}
+			if(found==false){				
+				System.out.println("No Food :-(");
+			}
+		}
+	}
+}
+
+class Customer{
+		int o;
+		int t;
+		
+		Customer(int o, int t){
+			this.o=o;
+			this.t=t;
+		}
+		
+		public int getO(){return this.o;}
+		
+		public int getT(){return this.t;}
+
+	}
